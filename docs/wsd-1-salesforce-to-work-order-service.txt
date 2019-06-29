@@ -1,0 +1,7 @@
+# Drop this into www.websequencediagrams.com
+
+title Salesforce to REST Service - Query Customer Work Orders
+
+Salesforce UI->Work-Order-Search: Search for Work Orders by Customer Id
+Work-Order-Search->Salesforce UI: Work Orders
+

@@ -1,0 +1,150 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/af271921-7236-44e6-9d0f-e3836aaec5a7/ #
+title: Work-Order-Search
+version: v1.1
+securitySchemes:
+  basic:
+    description: |
+      This API supports Basic Authentication.
+    type: Basic Authentication
+
+securedBy: [basic]
+types:
+  workorder:
+    properties:
+      identifier?: string
+      status: string
+      lastupdatedate: string
+      customerid: string
+      items: lineitems[]
+      estimatedcompletiondate: string
+
+  lineitems:
+    properties:
+      quantity: number
+      description: string
+
+/customerworkorders:
+  /{customerId}:
+    uriParameters:
+      customerid: string
+
+    post:
+      responses:
+        200:
+          body:
+            application/json:
+              type: workorder[]
+              example: |
+                [{
+                  "identifier": "eb8c8ca7-3c42-4489-a820-3aa138430b75",
+                  "status": "Pending Approval",
+                  "lastupdatedate": "06/27/2019 08:31:00",
+                  "customerid": "C10298892",
+                  "items": [{
+                    "quantity": 14,
+                    "description": "Clean Manifold"
+                  }, {
+                    "quantity": 35,
+                    "description": "Test Electronics"
+                  }, {
+                    "quantity": 1,
+                    "description": "Perform Inspection"
+                  }],
+                  "estimatedcompletiondate": "07/01/2019"
+                 },
+                 {
+                  "identifier": "3c4eb8c8-ca72-4489-a820-3430b75aa138",
+                  "status": "Approved",
+                  "lastupdatedate": "06/01/2019 06:13:00",
+                  "customerid": "C10298892",
+                  "items": [{
+                    "quantity": 10,
+                    "description": "Polish Bearings"
+                  }, {
+                    "quantity": 1,
+                    "description": "Perform Inspection"
+                  }],
+                  "estimatedcompletiondate": "06/29/2019"
+                 }]
+        404:
+          body:
+            application/json:
+              properties:
+                message: string
+              example: |
+                {
+                  "message" : "Work Order not found for customer"
+                }
+/workorders:
+  /{workorderId}:
+      uriParameters:
+        workorderid: string
+
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: workorder
+                example: |
+                  {
+                    "identifier": "eb8c8ca7-3c42-4489-a820-3aa138430b75",
+                    "status": "Pending Approval",
+                    "lastupdatedate": "06/27/2019 08:31:00",
+                    "customerid": "C10298892",
+                    "items": [{
+                      "quantity": 14,
+                      "description": "Clean Manifold"
+                    }, {
+                      "quantity": 35,
+                      "description": "Test Electronics"
+                    }, {
+                      "quantity": 1,
+                      "description": "Perform Inspection"
+                    }],
+                    "estimatedcompletiondate": "07/01/2019"
+                   }
+          404:
+            body:
+              application/json:
+                properties:
+                  message: string
+                example: |
+                  {
+                    "message" : "Work Order not found"
+                  }
+
+      post:
+        responses:
+          200:
+            body:
+              application/json:
+                type: workorder
+                example: |
+                  {
+                    "identifier": "eb8c8ca7-3c42-4489-a820-3aa138430b75",
+                    "status": "Pending Approval",
+                    "lastupdatedate": "06/27/2019 08:31:00",
+                    "customerid": "C10298892",
+                    "items": [{
+                      "quantity": 14,
+                      "description": "Clean Manifold"
+                    }, {
+                      "quantity": 35,
+                      "description": "Test Electronics"
+                    }, {
+                      "quantity": 1,
+                      "description": "Perform Inspection"
+                    }],
+                    "estimatedcompletiondate": "07/01/2019"
+                   }
+          404:
+            body:
+              application/json:
+                properties:
+                  message: string
+                example: |
+                  {
+                    "message" : "Work Order not found"
+                  }

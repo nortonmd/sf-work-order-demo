@@ -1,0 +1,6 @@
+# Drop this into www.websequencediagrams.com
+
+title Salesforce to REST Service - Query Customer Work Orders
+
+Terminal.cURL->MuleSoft.Work-Order-Search: Search for Work Orders by Customer Id
+MuleSoft.Work-Order-Search->Terminal.cURL: Work Orders

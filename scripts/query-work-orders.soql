@@ -1,0 +1,15 @@
+SELECT
+        CreatedById,
+        CreatedDate,
+        Customer_Id__c,
+        Estimated_Completion_Date__c,
+        Id,
+        IsDeleted,
+        Last_Update_Date__c,
+        LastModifiedById,
+        LastModifiedDate,
+        Name,
+        OwnerId,
+        Status__c,
+        SystemModstamp
+FROM Work_Order__c

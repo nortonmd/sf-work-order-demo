@@ -1,0 +1,13 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "namespace": "",
+  "adminEmail": "Michael.Norton@Salesforce.com",
+  "hasSampleData": true,
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "46.0"
+}

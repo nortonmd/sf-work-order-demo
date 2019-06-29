@@ -1,0 +1,21 @@
+{
+  "identifier": "eb8c8ca7-3c42-4489-a820-3aa138430b75",
+  "status": "Pending Approval",
+  "lastupdatedate": "06/27/2019 08:31:00",
+  "customerid": "C10298892",
+  "items": [
+    {
+      "quantity": 14,
+      "description": "Clean Manifold"
+    },
+    {
+      "quantity": 35,
+      "description": "Test Electronics"
+    },
+    {
+      "quantity": 1,
+      "description": "Perform Inspection"
+    }
+  ],
+  "estimatedcompletiondate": "07/01/2019"
+}
